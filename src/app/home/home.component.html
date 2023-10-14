@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+  <h2> List Items</h2>
+  <div>{{ list }}</div>
+
+  <h2>Search List</h2>
+
+  <div id="search-bar">
+    <input type="text" [(ngModel)]="searchVal" placeholder="Enter search value">
+    <button (click)="searchLists(searchVal)">Get List</button>
+  </div>
+
+  <div id="search-results">
+
+    {{searchList}}
+  </div>
+  <h2> Delete Items</h2>
+  <div>
+    <ng-container *ngFor="let item of itemList; let i = index">
+      {{ item }} <button (click)="getDelete()">
+        <i class="fa fa-trash"></i>
+      </button><br>
+    </ng-container>
+  </div>
+
+
+
+  <br />
+  <div *ngIf="deleteTitleVisibility">
+    <h5> Delete Items Result List</h5>
+    {{deleteList}}
+  </div>
+</body>
+</html>
+
+<br />
+<br />
+
+
+
